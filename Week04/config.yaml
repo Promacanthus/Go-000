@@ -1,0 +1,4 @@
+data_base_address: "127.0.0.1:3306"
+table_name: "strings"
+user: "root"
+password: "my-secret-pw"

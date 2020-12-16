@@ -1,0 +1,77 @@
+basePath: /v1
+host: petstore.swagger.io
+info:
+  contact:
+    email: promacanthus@gmail.com
+    name: promacanthus
+  description: This is a sample server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Go Week04 HomeWork Example API
+  version: 1.0 https://github.com/Promacanthus
+paths:
+  /v1/get/{name}:
+    get:
+      consumes:
+      - application/json
+      description: read string from db
+      parameters:
+      - description: String Name
+        in: path
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+        default:
+          description: ""
+          schema:
+            type: string
+      summary: Get the target string
+  /v1/save/{name}:
+    post:
+      consumes:
+      - application/json
+      description: store string to db
+      operationId: get-string-by-int
+      parameters:
+      - description: String Name
+        in: path
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+        default:
+          description: ""
+          schema:
+            type: string
+      summary: Save the target string
+swagger: "2.0"

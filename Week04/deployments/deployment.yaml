@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: week04-homework
+  labels: &labels
+    app: week04-homework
+spec:
+  replicas: 3
+  selector:
+    matchLabels: *labels
+  template:
+    metadata:
+      labels: *labels
+    spec:
+      containers:
+        - name: week04-homework
+          image: week04-homework:latest
+          ports:
+            - containerPort: 80
